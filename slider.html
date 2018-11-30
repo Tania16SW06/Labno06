@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+
+button{
+	width:100px;
+	height:40px;
+background-color: #FCC;
+	}
+.center{
+	position:absolute;
+	left:40%;
+	}
+.slider{
+	position:absolute;
+	left:25%;
+	
+	}	
+#first{
+	
+	border: solid 5px;
+ border-color: #C09;}	
+		
+body {
+  width:100%;
+  height:10%;
+  color:black;
+  font-weight:bold;
+  animation: myanimation 10s infinite;
+}
+
+@keyframes myanimation {
+  0% {background-color: #C99;}
+  25%{background-color:#FCC;}
+  50%{background-color:#F9C ;}
+  75%{background-color:#FCF;}
+   100%{background-color:#C99;}
+  .aside{
+	   height:500px;
+	   width:80px;
+	   border:thick;
+  }	
+	
+</style>
+<script>
+var x=0;
+image=['gal1.jpg','gal2.jpg','gal3.jpg','gal4.jpg','gal5.jpg','gal6.jpg','gal7.jpg','gal8.jpg'];
+function display(direct){
+img=document.getElementById('first');
+img.src=image[0];
+
+	if(direct == "right"){
+		img.src = image[x];
+			x++;
+		}
+		
+		if(x>=image.length){
+			x=0;
+					
+	}
+if(direct == "left"){
+	x--;
+}
+
+	if(x<0)
+	{
+		x=image.length-1;
+		}
+    img.src = image[x];
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+<div class="slider" id="main-slider">
+<h1 style="color:#000;font-family:'Palatino Linotype', 'Book Antiqua', Palatino, serif;text-align:center">My Image Slider</h1>
+<!-- outermost container element -->
+   <div>
+ 
+   
+      <img src="gal1.jpg" height="450px" width="700px" id="first">
+       
+       
+   </br></br>
+   <div class="center">
+  <button onclick="display('left')" >Previous</button>
+  <button onclick="display('right')" >Next</button></div>
+</div>
+
+</div>	
+</body>
+</html>
+
+</body>
+</html>
